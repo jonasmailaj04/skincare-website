@@ -138,3 +138,25 @@ document.addEventListener('DOMContentLoaded', function() {
         })
     }
 
+    const allInputs = [firstname_input, email_input, password_input, repeat_password_input].filter(input => input !== null)
+
+    allInputs.forEach(input => {
+        if (input) {
+            input.addEventListener('input', () => {
+                if(input.parentElement.classList.contains('incorrect')){
+                    input.parentElement.classList.remove('incorrect')
+                    if (input === password_input && input.value.length > 0) {
+                        const passwordErrors = validateStrongPassword(input.value)
+                        if (passwordErrors.length === 0) {
+                            error_message.innerText = ''
+                            error_message.style.display = 'none'
+                        }
+                    } else if (input !== password_input) {
+                        error_message.innerText = ''
+                        error_message.style.display = 'none'
+                    }
+                }
+            })
+        }
+    })
+})
