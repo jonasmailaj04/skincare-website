@@ -1,0 +1,21 @@
+
+function getLoginFormErrors(email, password, email_input, password_input) {
+    let errors = []
+
+    if( email === '' || email == null){
+        errors.push('email is required')
+        if (email_input) email_input.parentElement.classList.add('incorrect')
+    }
+
+    if( password === '' || password == null){
+        errors.push('password is required')
+        if (password_input) password_input.parentElement.classList.add('incorrect')
+    } else {
+        const passwordErrors = validateStrongPassword(password)
+        if (passwordErrors.length > 0) {
+            errors.push(...passwordErrors)
+            if (password_input) password_input.parentElement.classList.add('incorrect')
+        }
+    }
+
+    return errors
