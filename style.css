@@ -248,3 +248,111 @@ background-position: center;
     font-weight: 700;
     padding-top: 0.5rem;
     letter-spacing: 0.5px;
+body.login-page{
+    min-height: 100vh;
+    background-image: url("images/pexels-anete-lusina-16621445.jpg");
+    background-size: cover;
+    background-position: right;
+    overflow: hidden;
+}
+
+.login-page .wrapper{
+    box-sizing: border-box;
+    background-color: var(--base-color);
+    height: 100vh;
+    width: max(40%, 600px);
+    padding: 10px;
+    border-radius: 0 20px 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-page h1{
+    font-size: 3rem;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.login-page form{
+    width: min(400px, 100%);
+    margin-top: 20px;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.login-page form > div{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.login-page form input{
+    box-sizing: border-box;
+    width: 100%;
+    height: 50px;
+    padding: 1em;
+    border-radius: 10px;
+    border: 2px solid var(--input-color);
+    background-color: var(--input-color);
+}
+
+.login-page .password-container{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.login-page .password-container input{
+    padding-right: 45px;
+}
+
+.login-page .password-container i{
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #666;
+    font-size: 1.2rem;
+    z-index: 10;
+}
+
+.login-page .password-container i:hover{
+    color: var(--accent-color);
+}
+
+.login-page form button{
+    margin-top: 10px;
+    border: none;
+    border-radius: 1000px;
+    padding: 1rem 4em;
+    background-color: var(--accent-color);
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.login-page form button:hover{
+    background-color: var(--text-color);
+}
+
+.login-page #error-message{
+    color: #f06272;
+    display: block;
+    min-height: 1.5rem;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    text-align: center;
+    width: 100%;
+}
+
+.login-page form div.incorrect input{
+    border-color: #f06272;
+    border-width: 2px;
+}
