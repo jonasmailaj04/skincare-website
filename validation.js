@@ -115,3 +115,26 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 1000)
         }
     })
+
+    if (password_input) {
+        password_input.addEventListener('input', function() {
+            const password = this.value
+            if (password.length > 0) {
+                const passwordErrors = validateStrongPassword(password)
+                if (passwordErrors.length > 0) {
+                    error_message.innerText = passwordErrors.join(". ")
+                    error_message.style.display = 'block'
+                    this.parentElement.classList.add('incorrect')
+                } else {
+                    error_message.innerText = ''
+                    error_message.style.display = 'none'
+                    this.parentElement.classList.remove('incorrect')
+                }
+            } else {
+                error_message.innerText = ''
+                error_message.style.display = 'none'
+                this.parentElement.classList.remove('incorrect')
+            }
+        })
+    }
+
