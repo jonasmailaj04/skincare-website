@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Glowy - Natural Skincare Products</title>
 
+    <title>Login</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <link rel="stylesheet" href="style.css">
@@ -115,6 +116,9 @@
 <div class="info">
     <h3>free delivery</h3>
     <span>on all orders </span>
+        <button type="submit">Login</button>
+    </form>
+<p> New here? <a href="Signup.html"> Create an Account </a></p>
 </div>
     </div>
 
@@ -125,4 +129,18 @@
     <span>refunds guarantee </span>
 </div>
     </div>
-</section>
+</section><script>
+    const togglePassword = document.getElementById('toggle-password');
+    const passwordInput = document.getElementById('password-input');
+   
+    if (togglePassword && passwordInput) {
+        togglePassword.addEventListener('click', function() {
+            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordInput.setAttribute('type', type);
+            this.classList.toggle('fa-eye');
+            this.classList.toggle('fa-eye-slash');
+        });
+    }
+</script>
+</body>
+</html>
